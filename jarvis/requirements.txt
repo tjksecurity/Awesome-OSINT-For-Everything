@@ -1,0 +1,6 @@
+anthropic>=0.92.0
+rich>=13.7.0
+prompt_toolkit>=3.0.43
+platformdirs>=4.2.0
+fastapi>=0.110.0
+uvicorn>=0.27.0

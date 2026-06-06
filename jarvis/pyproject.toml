@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jarvis"
+version = "0.1.0"
+description = "EVA — a personal AI commander, voice modeled on Command & Conquer: Red Alert"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Travis Glosson" }]
+license = { text = "MIT" }
+dependencies = [
+    "anthropic>=0.92.0",
+    "rich>=13.7.0",
+    "prompt_toolkit>=3.0.43",
+    "platformdirs>=4.2.0",
+    "fastapi>=0.110.0",
+    "uvicorn>=0.27.0",
+]
+
+[project.optional-dependencies]
+voice-stt = ["openai-whisper>=20231117", "sounddevice>=0.4.6", "numpy>=1.26"]
+dev = ["pytest>=8.0", "ruff>=0.4.0", "httpx>=0.27.0"]
+
+[project.scripts]
+jarvis = "jarvis.cli:main"
+eva = "jarvis.cli:main"
+jarvis-serve = "jarvis.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["jarvis*"]

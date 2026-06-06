@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0a1410" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="EVA" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
+  <link rel="apple-touch-icon" href="/icon-192.svg" />
+  <link rel="stylesheet" href="/static/styles.css" />
+  <title>EVA</title>
+</head>
+<body>
+  <div id="setup" class="setup hidden">
+    <div class="setup-card">
+      <div class="banner">E V A</div>
+      <p class="subtitle">Electronic Video Agent — pair this device</p>
+      <label>Server URL
+        <input type="url" id="setup-url" placeholder="https://eva.your-tunnel.example" autocomplete="off" />
+      </label>
+      <label>Auth token
+        <input type="password" id="setup-token" placeholder="paste server token" autocomplete="off" />
+      </label>
+      <button id="setup-go">Establish connection</button>
+      <p class="hint">Token printed by <code>jarvis serve</code> on first launch. Stored locally on this device.</p>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="topbar">
+      <div class="brand">
+        <span class="dot" id="status-dot"></span>
+        <span class="title">EVA</span>
+        <span class="sub" id="status-text">offline</span>
+      </div>
+      <div class="actions">
+        <button class="icon-btn" id="btn-voice" title="Voice on/off" aria-label="Voice on/off">🔊</button>
+        <button class="icon-btn" id="btn-authorize" title="Authorize destructive ops" aria-label="Authorize">🔒</button>
+        <button class="icon-btn" id="btn-menu" title="Menu" aria-label="Menu">⋮</button>
+      </div>
+    </header>
+
+    <div class="menu hidden" id="menu">
+      <button data-cmd="memory">View memory</button>
+      <button data-cmd="reset">Reset conversation</button>
+      <button data-cmd="state">Show status</button>
+      <button data-cmd="unpair">Unpair device</button>
+    </div>
+
+    <main class="chat" id="chat" aria-live="polite"></main>
+
+    <footer class="composer">
+      <button id="btn-mic" class="mic-btn" aria-label="Hold to talk">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3z" fill="currentColor"/>
+          <path d="M19 11a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V20H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-3v-2.08A7 7 0 0 0 19 11z" fill="currentColor"/>
+        </svg>
+      </button>
+      <input id="input" type="text" placeholder="orders, Commander…" autocomplete="off" />
+      <button id="btn-send" class="send-btn" aria-label="Send">▸</button>
+    </footer>
+  </div>
+
+  <script src="/static/app.js" type="module"></script>
+</body>
+</html>
