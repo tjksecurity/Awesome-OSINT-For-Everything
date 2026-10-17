@@ -411,7 +411,7 @@ Polish
   to 54pt (6 point to 54 point); colors: the forecolor (color of the letters in
   your text) and backcolor (background color behind the letters)
 - [relational algebra
-  calculator](https://dbis-uibk.github.io/relax/calc/local/uibk/local/0) - If
+  calculator](https://dbis-uibk.github.io/relax/) - If
   you want to learn SQL you take a database system and try some queries. But if
   you want to learn relational algebra what do you use? Pen and paper? The
   relational algebra calculator helps you learn relational algebra (RelAlg) by
@@ -2273,7 +2273,7 @@ Enter two images and the difference will show up below
   technology, tools, trends, and careers
 - [Datasetlist.com](https://www.datasetlist.com/) - A list of machine learning
   datasets from across the web.
-- [Search Datasets](https://datahub.io/search) - Build elegant data-driven sites
+- [Search Datasets](https://datahub.io/) - Build elegant data-driven sites
   with Markdown & deploy in seconds.
 - [Opensanctions.org](https://opensanctions.org/) - OpenSanctions helps
   investigators find leads, allows companies to manage risk and enables
